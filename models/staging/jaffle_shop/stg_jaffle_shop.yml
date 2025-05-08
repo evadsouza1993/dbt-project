@@ -2,14 +2,18 @@ version: 2
 
 models:
   - name: stg_jaffle_shop__customers
+    description: one customer per row
     columns:
       - name: customer_id
+        description: Primary key of the custome table
         tests:
           - unique
           - not_null
   - name: stg_jaffle_shop__orders
+    description: one order per row
     columns:
       - name: status
+        description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
               values: ['shipped','completed','return_pending','returned','placed']
