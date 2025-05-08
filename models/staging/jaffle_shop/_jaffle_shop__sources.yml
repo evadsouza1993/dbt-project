@@ -14,6 +14,12 @@ sources:
     loaded_at_field: _etl_loaded_at
     tables:
       - name: customers
+        columns:
+          - name: id
+            tests:
+               - not_null
+               - unique
         freshness: null
+
         
       - name: orders
